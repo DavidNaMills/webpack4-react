@@ -1,0 +1,50 @@
+{
+  "name": "@davidnamills/webpack4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config webpack.dev.js --open",
+    "build": "webpack --config webpack.prod.js",
+    "test:local": "jest --watchAll",
+    "test:coverage": "jest --watchAll --coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.0",
+    "@babel/preset-react": "^7.9.1",
+    "@testing-library/react-hooks": "^3.2.1",
+    "babel-loader": "^8.1.0",
+    "bootstrap": "^4.4.1",
+    "clean-webpack-plugin": "^3.0.0",
+    "copy-webpack-plugin": "^5.1.1",
+    "css-loader": "^3.4.2",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "eslint": "^6.8.0",
+    "file-loader": "^6.0.0",
+    "html-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "imagemin-webpack-plugin": "^2.4.2",
+    "jest": "^25.2.4",
+    "mini-css-extract-plugin": "^0.9.0",
+    "node-sass": "^4.13.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.1.3",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^4.42.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-common-shake": "^2.1.0",
+    "webpack-dev-server": "^3.10.3",
+    "webpack-merge": "^4.2.2"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
