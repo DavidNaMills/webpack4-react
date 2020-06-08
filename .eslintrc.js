@@ -35,6 +35,7 @@ module.exports = {
       },
     ],
     quotes: ["error", "double"],
+    "prefer-inline-snapshots": false,
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
     "no-console": ["error", { allow: ["log", "error"] }],
     "linebreak-style": ["error", "windows"],
