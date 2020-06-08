@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`the canary cannot die takes a picture of the canary 1`] = `
-<div>
-  <p>
-     hello!
-  </p>
-</div>
-`;

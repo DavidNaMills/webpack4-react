@@ -16,7 +16,7 @@ module.exports = merge(common, {
   mode: "production",
   output: {
     filename: "build.[contentHash].js",
-    path: path.join(__dirname, "../dist"),
+    path: path.join(__dirname, "../build"),
   },
   optimization: {
     minimizer: [

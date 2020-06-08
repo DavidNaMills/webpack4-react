@@ -18,6 +18,12 @@ describe("the canary cannot die", () => {
     expect.assertions(1);
     const comp = renderer.create(<App />);
     const app = comp.toJSON();
-    expect(app).toMatchInlineSnapshot();
+    expect(app).toMatchInlineSnapshot(`
+      <div>
+        <p>
+           hello!
+        </p>
+      </div>
+    `);
   });
 });

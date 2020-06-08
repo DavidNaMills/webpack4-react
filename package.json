@@ -10,8 +10,8 @@
     "test:coverage": "env-cmd -f ./env/tests.env jest --watchAll --coverage --verbose",
     "test:single": "env-cmd -f ./env/tests.env jest --coverage --verbose",
     "test": "env-cmd -f ./env/tests.env jest --watchAll --verbose",
-    "start": "npm run eslint:src && npm run test:single && env-cmd -f ./env/development.env webpack-dev-server --config ./webpack/webpack.dev.js",
-    "build": "npm run eslint:src && npm run test:single && env-cmd -f ./env/production.env webpack --config ./webpack/webpack.prod.js"
+    "start": "npm run eslint:src && npm run test:single && env-cmd -f ./env/development.env webpack-dev-server --config ./webpack/webpack.dev.js --env development",
+    "build": "npm run eslint:src && npm run test:single && env-cmd -f ./env/production.env webpack --config ./webpack/webpack.prod.js --env production"
   },
   "keywords": [],
   "author": "",
