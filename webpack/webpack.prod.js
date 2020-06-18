@@ -21,7 +21,11 @@ module.exports = merge(common, {
   optimization: {
     minimizer: [
       new OptomizeCssAssetsWebpackPlugin(),
-      new TerserPlugin(),
+      new TerserPlugin({
+        terserOptions: {
+          ecma: 6,
+        },
+      }),
       new HtmlWebpackPlugin({
         template: path.join(__dirname, "../src/template.html"),
         minify: {
@@ -30,9 +34,9 @@ module.exports = merge(common, {
           collapseWhitespace: true,
         },
       }),
-      new UglifyJsPlugin({
-        exclude: /node_modules/,
-      }),
+      // new UglifyJsPlugin({
+      //   exclude: /node_modules/,
+      // }),
     ],
   },
   plugins: [

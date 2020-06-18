@@ -7,11 +7,16 @@ module.exports = {
   entry: {
     // main: "./src/index.js",
     // vendor: "./src/vendors.js",
-    main: path.join(__dirname, "../src/index.js"),
+    main: path.join(__dirname, "../src/index.tsx"),
     vendor: path.join(__dirname, "../src/vendors.js"),
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.html$/,
         use: ["html-loader"],
@@ -52,6 +57,9 @@ module.exports = {
         ],
       },
     ],
+  },
+  resolve: {
+    extensions: [".tsx", ".ts", ".js"],
   },
   plugins: [new MiniCssExtractPlugin()],
 };

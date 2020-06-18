@@ -12,6 +12,7 @@ module.exports = {
     "plugin:jest/all",
     "plugin:prettier/recommended",
     "plugin:jsdoc/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier",
   ],
   globals: {
@@ -25,8 +26,9 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module",
   },
-  plugins: ["react", "jest"],
+  plugins: ["@typescript-eslint", "react", "jest"],
   rules: {
+    "import/no-unresolved": "off",
     "import/no-extraneous-dependencies": [
       "error",
       {
@@ -35,7 +37,11 @@ module.exports = {
       },
     ],
     quotes: ["error", "double"],
-    "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],
+    "react/jsx-filename-extension": [
+      1,
+      { extensions: [".js", ".jsx", ".ts", ".tsx"] },
+    ],
+    "import/extensions": "off",
     "no-console": ["error", { allow: ["log", "error"] }],
     "linebreak-style": ["error", "windows"],
     "prettier/prettier": [
@@ -50,5 +56,17 @@ module.exports = {
         requireReturn: false,
       },
     ],
+  },
+
+  settings: {
+    "import/resolver": {
+      webpack: {
+        config: {
+          resolve: {
+            modules: ["node_modules"],
+          },
+        },
+      },
+    },
   },
 };
