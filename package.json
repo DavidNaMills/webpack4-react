@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "docs": "jsdoc -c jsdoc.json",
-    "eslint:test": "eslint ./tests/*.js",
+    "eslint:test": "eslint ./tests/*.js --fix",
     "eslint:src": "eslint --fix src/**/*.{js,jsx,ts,tsx}",
     "test:coverage": "env-cmd -f ./env/tests.env jest --watchAll --coverage --verbose",
     "test:single": "env-cmd -f ./env/tests.env jest --coverage --verbose",
