@@ -19,7 +19,9 @@ describe("the canary cannot die", () => {
     const comp = renderer.create(<App />);
     const app = comp.toJSON();
     expect(app).toMatchInlineSnapshot(`
-      <div>
+      <div
+        className="hello"
+      >
         <p>
            hello!
         </p>
