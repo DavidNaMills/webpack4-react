@@ -1,22 +1,30 @@
 const path = require("path");
+const fs = require("fs");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const webpack = require("webpack");
-// const x = require("../src/index");
+const webpack = require("webpack");
+const dotenv = require("dotenv");
 
+// module.exports = (env) => {
 module.exports = {
+  // const currentPath = path.join(__dirname, "/env");
+
+  // const basePath = currentPath + "/.env";
+  // const envPath = basePath + "." + env.ENVIRONMENT;
+  // const finalPath = fs.existsSync(envPath) ? envPath : basePath;
+
+  // const fileEnv = dotenv.config({ path: finalPath }).parsed;
+  // const envKeys = Object.keys(fileEnv).reduce((prev, next) => {
+  //   prev[`process.env.${next}`] = JSON.stringify(fileEnv[next]);
+  //   return prev;
+  // }, {});
+
+  // return {
   entry: {
-    // main: "./src/index.js",
-    // vendor: "./src/vendors.js",
-    main: path.join(__dirname, "../src/index.tsx"),
-    vendor: path.join(__dirname, "../src/vendors.js"),
+    main: "./src/index.js",
+    vendor: "./src/vendors.js",
   },
   module: {
     rules: [
-      {
-        test: /\.tsx?$/,
-        use: "ts-loader",
-        exclude: /node_modules/,
-      },
       {
         test: /\.html$/,
         use: ["html-loader"],
@@ -59,7 +67,11 @@ module.exports = {
     ],
   },
   resolve: {
-    extensions: [".tsx", ".ts", ".js"],
+    extensions: [".js"],
   },
-  plugins: [new MiniCssExtractPlugin()],
+  plugins: [
+    new MiniCssExtractPlugin(),
+    // , new webpack.DefinePlugin(envKeys)
+  ],
 };
+// };
